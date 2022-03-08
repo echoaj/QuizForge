@@ -19,6 +19,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script defer src="builder.js"></script>
     <title>Quiz Forge</title>
 
 </head>
@@ -58,137 +62,27 @@
 
         <div>
             <div class="card m-3 border-0" style="width: 18rem; min-height: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Which one of the following is not a programming language?</h5>
-                    <ol type="A">
-                        <li>Rust</li>
-                        <li>Node.js</li>
-                        <li>Java</li>
-                        <li>Ruby</li>
-                    </ol>
-                </div>
-                <div class="text-center bg-info text-white rounded-bottom">2</div>
-            </div>
-        </div>
-        <div>
-            <div class="card m-3 border-0" style="width: 18rem; min-height: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Which one of the following is not a programming language?</h5>
-                    <ol type="A">
-                        <li>Rust</li>
-                        <li>Node.js</li>
-                        <li>Java</li>
-                        <li>Ruby</li>
-                    </ol>
-                </div>
-                <div class="text-center bg-info text-white rounded-bottom">2</div>
-            </div>
-        </div>
-        <div>
-            <div class="card m-3 border-0" style="width: 18rem; min-height: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Which one of the following is not a programming language?</h5>
-                    <ol type="A">
-                        <li>Rust</li>
-                        <li>Node.js</li>
-                        <li>Java</li>
-                        <li>Ruby</li>
-                    </ol>
-                </div>
-                <div class="text-center bg-info text-white rounded-bottom">2</div>
-            </div>
-        </div>
-        <div>
-            <div class="card m-3 border-0" style="width: 18rem; min-height: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Which one of the following is not a programming language?</h5>
-                    <ol type="A">
-                        <li>Rust</li>
-                        <li>Node.js</li>
-                        <li>Java</li>
-                        <li>Ruby</li>
-                    </ol>
-                </div>
-                <div class="text-center bg-info text-white rounded-bottom">2</div>
-            </div>
-        </div>
-        <div>
-            <div class="card m-3 border-0" style="width: 18rem; min-height: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Which one of the following is not a programming language?</h5>
-                    <ol type="A">
-                        <li>Rust</li>
-                        <li>Node.js</li>
-                        <li>Java</li>
-                        <li>Ruby</li>
-                    </ol>
-                </div>
-                <div class="text-center bg-info text-white rounded-bottom">2</div>
-            </div>
-        </div>
-        <div>
-            <div class="card m-3 border-0" style="width: 18rem; min-height: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Which one of the following is not a programming language?</h5>
-                    <ol type="A">
-                        <li>Rust</li>
-                        <li>Node.js</li>
-                        <li>Java</li>
-                        <li>Ruby</li>
-                    </ol>
-                </div>
-                <div class="text-center bg-info text-white rounded-bottom">2</div>
-            </div>
-        </div>
-        <div>
-            <div class="card m-3 border-0" style="width: 18rem; min-height: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Which one of the following is not a programming language?</h5>
-                    <ol type="A">
-                        <li>Rust</li>
-                        <li>Node.js</li>
-                        <li>Java</li>
-                        <li>Ruby</li>
-                    </ol>
-                </div>
-                <div class="text-center bg-info text-white rounded-bottom">2</div>
-            </div>
-        </div>
-        <div>
-            <div class="card m-3 border-0" style="width: 18rem; min-height: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Which one of the following is not a programming language?</h5>
-                    <ol type="A">
-                        <li>Rust</li>
-                        <li>Node.js</li>
-                        <li>Java</li>
-                        <li>Ruby</li>
-                    </ol>
-                </div>
-                <div class="text-center bg-info text-white rounded-bottom">2</div>
-            </div>
-        </div>
+                <form action="#" method="POST" id="form">
+                    <div class="card-body pb-0">
+                        <h6>Question</h6>
+                        <h5 class="card-title">
+                            <textarea name="" id="title" cols="25" rows="2" style="resize: none;"></textarea>
+                        </h5>
+                        <ol type="A">
+                            <li><input type="text" id="a"></li>
+                            <li><input type="text" id="b"></li>
+                            <li><input type="text" id="c"></li>
+                            <li><input type="text" id="d"></li>
+                        </ol>
+                    </div>
 
-        <div>
-            <div class="card m-3 border-0" style="width: 18rem; min-height: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <textarea name="" id="" cols="25" rows="2" style="resize: none;"></textarea>
-                    </h5>
-                    <ol type="A">
-                        <li><input type="text"></li>
-                        <li><input type="text"></li>
-                        <li><input type="text"></li>
-                        <li><input type="text"></li>
-                    </ol>
-                </div>
-
-                <div>
-                    <button type="submit" class="text-center bg-secondary text-white border-0 p-0"
-                        style="width: 50%; border-bottom-left-radius: 4px;">✕</input>
+                    <div>
+                        <button type="submit" class="text-center bg-secondary text-white border-0 p-0"
+                            style="width: 50%; border-bottom-left-radius: 4px;">✕</button>
                         <button type="submit" class="text-center bg-success text-white border-0 p-0"
-                            style="width: 50%; border-bottom-right-radius: 4px">✓</input>
-                </div>
+                            style="width: 50%; border-bottom-right-radius: 4px">✓</button>
+                    </div>
+                </form>
             </div>
         </div>
 

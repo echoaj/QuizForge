@@ -22,15 +22,17 @@ quiz = [
     ["Which one of the following is not a programming language?", "Rust", "Node.js", "Java", "Ruby", "2"],
 ];
 
+quiz = [];
+
 
 // Jquery
 $(document).ready(function () {
 
     // Populate 
-    // $.each(quiz, function (i, obj) {
-    //     const newCard = getCard(...obj);
-    //     $("#card-input-form").before(newCard);
-    // });
+    $.each(quiz, function (i, obj) {
+        const newCard = getCard(...obj);
+        $("#card-input-form").before(newCard);
+    });
 
     // Submit new quiz questions
     $("#form").submit(function (event) {
@@ -53,4 +55,10 @@ $(document).ready(function () {
         $("#card-input-form").css("display", "block");
         $("#add-button").css("display", "none");
     })
+
+    // Cancel Button Pressed
+    $("#cancel-button").click(function (){
+        $("#card-input-form").css("display", "none");
+        $("#add-button").css("display", "block"); 
+    }) 
 });

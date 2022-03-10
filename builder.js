@@ -22,7 +22,7 @@ quiz = [
     ["Which one of the following is not a programming language?", "Rust", "Node.js", "Java", "Ruby", "2"],
 ];
 
-quiz = [];
+// quiz = [];
 
 
 // Jquery
@@ -65,7 +65,18 @@ $(document).ready(function () {
     }) 
 
     // Publish Button
-    $("#publish-button").click(function (){
 
-    })
+    $("#publish-button").click(function () {
+        $("#add-button").css("display", "none");
+        const allCards = document.getElementById("dashboard")
+        console.log(allCards);
+        var opt = {
+            margin: 1,
+            filename: 'myfile.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().from(allCards).set(opt).save();
+    });
 });

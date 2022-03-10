@@ -20,6 +20,8 @@ function getCard(title, a, b, c, d, num) {
 quiz = [
     ["Which programming language runs in the web browser?", "Java", "Python", "C++", "JavaScript", "1"],
     ["Which one of the following is not a programming language?", "Rust", "Node.js", "Java", "Ruby", "2"],
+    ["In JavaScript, what data structure would you use for storing key-value pairs?", "Object", "Array", "Set", "String", "3"],
+    ["Which one of the following is not a CSS Selector?", "id", "class", "item", ":root", "4"],
 ];
 
 // quiz = [];
@@ -32,6 +34,7 @@ $(document).ready(function () {
     $.each(quiz, function (i, obj) {
         const newCard = getCard(...obj);
         $("#card-input-form").before(newCard);
+        $("#publish-button").prop('disabled', false);
     });
 
     // Submit new quiz questions
@@ -42,7 +45,7 @@ $(document).ready(function () {
         const b = $("#b").val();
         const c = $("#c").val();
         const d = $("#d").val();
-        const data = [title, a, b, c, d, quiz.length+1]
+        const data = [title, a, b, c, d, quiz.length + 1];
         quiz.push(data);
         const newCard = getCard(...data);
         $("#card-input-form").before(newCard);
@@ -56,27 +59,31 @@ $(document).ready(function () {
         $("#card-input-form").css("display", "block");
         $("#form").trigger('reset');
         $("#add-button").css("display", "none");
-    })
+    });
 
     // Cancel Button Pressed
-    $("#cancel-button").click(function (){
+    $("#cancel-button").click(function () {
         $("#card-input-form").css("display", "none");
-        $("#add-button").css("display", "block"); 
-    }) 
+        $("#add-button").css("display", "block");
+    });
 
     // Publish Button
-
     $("#publish-button").click(function () {
-        $("#add-button").css("display", "none");
-        const allCards = document.getElementById("dashboard")
-        console.log(allCards);
+        // Jquery Object[0] => HTML DOM Object
+        $("#dashboard").removeClass("d-flex flex-wrap").addClass("d-block pt-5");
+        $(".quiz-card").removeClass("m-3").addClass("mx-auto mt-5");
+        
+        var allCards = $("#body")[0];
         var opt = {
-            margin: 1,
-            filename: 'myfile.pdf',
+            margin: 0,
+            pagebreak: { mode: 'avoid-all', after: ".quiz-card", avoid: ['#add-button', '#card-input-form', '#card-input-form']},
+            filename: 'quiz.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 2 },
             jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
         };
+        // console.log(allCards)
+        // console.log(document.getElementById("body").get);
         html2pdf().from(allCards).set(opt).save();
     });
 });

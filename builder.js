@@ -69,6 +69,9 @@ $(document).ready(function () {
 
     // Publish Button
     $("#publish-button").click(function () {
+        $("#card-input-form").css("display", "none");
+        $("#add-button").css("display", "none");
+        $("#publish-button-div").css("display", "none");
         const page = $("#body")
         page.removeClass("m-5");
         page.find("#dashboard").removeClass("d-flex flex-wrap").addClass("d-block pt-5");
@@ -83,7 +86,7 @@ $(document).ready(function () {
             html2canvas: { scale: 2 },
             jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
         };
-        
+
         html2pdf().from(allCards).set(opt).save();
     });
 });

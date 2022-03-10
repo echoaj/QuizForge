@@ -1,7 +1,7 @@
 
 function getCard(title, a, b, c, d, num) {
     return `<div>
-                <div class="card m-3 border-0" id="quiz-card" style="width: 20rem; min-height: 20rem;">
+                <div class="card m-3 border-0 quiz-card" style="width: 20rem; min-height: 20rem;">
                     <div class="card-body">
                         <h5 class="card-title">${title}</h5>
                         <ol type="A">
@@ -48,11 +48,13 @@ $(document).ready(function () {
         $("#card-input-form").before(newCard);
         $("#card-input-form").css("display", "none");
         $("#add-button").css("display", "block");
+        $("#publish-button").prop('disabled', false);
     });
 
     // Add Button Pressed
     $("#add-button").click(function () {
         $("#card-input-form").css("display", "block");
+        $("#form").trigger('reset');
         $("#add-button").css("display", "none");
     })
 
@@ -61,4 +63,9 @@ $(document).ready(function () {
         $("#card-input-form").css("display", "none");
         $("#add-button").css("display", "block"); 
     }) 
+
+    // Publish Button
+    $("#publish-button").click(function (){
+
+    })
 });

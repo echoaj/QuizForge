@@ -69,21 +69,21 @@ $(document).ready(function () {
 
     // Publish Button
     $("#publish-button").click(function () {
-        // Jquery Object[0] => HTML DOM Object
-        $("#dashboard").removeClass("d-flex flex-wrap").addClass("d-block pt-5");
-        $(".quiz-card").removeClass("m-3").addClass("mx-auto mt-5");
-        
-        var allCards = $("#body")[0];
+        const page = $("#body")
+        page.removeClass("m-5");
+        page.find("#dashboard").removeClass("d-flex flex-wrap").addClass("d-block pt-5");
+        page.find(".quiz-card").removeClass("m-3").addClass("mx-auto mt-5");
+        const allCards = page[0];       // Jquery Object[0] => HTML DOM Object
+
         var opt = {
             margin: 0,
-            pagebreak: { mode: 'avoid-all', after: ".quiz-card", avoid: ['#add-button', '#card-input-form', '#card-input-form']},
+            pagebreak: { mode: 'avoid-all', after: ".quiz-card", avoid: ['#add-button', '#card-input-form', '#card-input-form'] },
             filename: 'quiz.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 2 },
             jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
         };
-        // console.log(allCards)
-        // console.log(document.getElementById("body").get);
+        
         html2pdf().from(allCards).set(opt).save();
     });
 });

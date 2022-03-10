@@ -24,7 +24,7 @@ quiz = [
     ["Which one of the following is not a CSS Selector?", "id", "class", "item", ":root", "4"],
 ];
 
-// quiz = [];
+quiz = [];
 
 
 // Jquery

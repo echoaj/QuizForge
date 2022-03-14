@@ -1,0 +1,8 @@
+{
+  "name": "App Forge",
+  "description": "An app that allows users to create a quiz and export it as a PDF",
+  "repository": "https://github.com/echoaj/QuizForge",
+  "logo": "https://quiz-forge.herokuapp.com/Icons/favicon-32x32.png",
+  "keywords": ["quiz", "PDF", "export"],
+  "stack": "container"
+}

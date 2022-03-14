@@ -1,2 +1,10 @@
-composer.json
-index.php
+#### Static Normal ####
+default.conf.template
+heroku.yml
+nginx.conf
+app.json
+.dockerignore
+
+#### Docker Static ####
+# composer.json
+# index.php
